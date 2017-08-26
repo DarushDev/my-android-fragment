@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">My Android Fragment</string>
+
+    <string name="description_format">%1$s\n\n%2$s</string>
+
+</resources>
