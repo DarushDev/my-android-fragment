@@ -20,7 +20,12 @@ public class MainActivity extends AppCompatActivity implements RageComicListFrag
 
     @Override
     public void onRageComicSelected(int imageResId, String name, String description, String url) {
-        Toast.makeText(this, "Hey, you selected " + name + "!", Toast.LENGTH_SHORT).show();
+        final RageComicDetailsFragment detailsFragment = RageComicDetailsFragment.newInstance(imageResId, name, description, url);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.root_layout, detailsFragment, "rageComicDetails")
+                .addToBackStack(null)
+                .commit();
     }
 
 }
